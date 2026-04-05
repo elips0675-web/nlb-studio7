@@ -1,88 +1,27 @@
-# Веб-сайт "Библиотека 2026"
+# React + TypeScript + Vite
 
-Это современный, многофункциональный и адаптивный веб-сайт для вымышленной "Библиотеки 2026". Проект демонстрирует широкий спектр услуг, предоставляемых библиотекой, от традиционного каталога книг до современных сервисов, таких как коворкинг, спортзал и даже обзорная площадка.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 Ключевые особенности
+## Expanding the ESLint configuration
 
-- **Современный дизайн:** Чистый, адаптивный интерфейс, созданный с использованием Tailwind CSS.
-- **Интерактивность:** Плавные анимации и переходы с помощью Framer Motion.
-- **Каталог услуг:** Разделы для основных услуг (обзорная площадка, сауна, спортзал) и полиграфических услуг.
-- **Динамический калькулятор:** Интерактивный калькулятор стоимости для полиграфических услуг.
-- **Новости и события:** Страницы для отображения последних новостей и предстоящих событий с пагинацией.
-- **Компонентный подход:** Проект построен на переиспользуемых React-компонентах.
+If you are developing a production application, we recommend updating the configuration to enable type-aware linting:
 
-## 🛠️ Технологический стек
+- Configure the top-level `parserOptions` property like this:
 
-- **Фреймворк:** [React](https://react.dev/)
-- **Язык:** [TypeScript](https://www.typescriptlang.org/)
-- **Стилизация:** [Tailwind CSS](https://tailwindcss.com/)
-- **Роутинг:** [React Router DOM](https://reactrouter.com/)
-- **Анимации:** [Framer Motion](https://www.framer.com/motion/)
-- **Иконки:** [Lucide React](https://lucide.dev/)
-- **Слайдер:** [React Slick](https://react-slick.neostack.com/)
-- **Сборка:** [Vite](https://vitejs.dev/)
-- **Хостинг:** [Firebase Hosting](https://firebase.google.com/docs/hosting)
-
-## 📂 Структура проекта
-
-```
-/src
-|-- /app
-|   |-- /components   # Переиспользуемые компоненты (Header, Footer, и т.д.)
-|   |-- /pages        # Основные страницы приложения (Home, Services, News, etc.)
-|   |-- /assets       # Статические ассеты
-|   |-- App.tsx       # Главный компонент приложения с роутингом
-|   +-- main.tsx      # Точка входа в приложение
-|-- ...
+```js
+   parserOptions: {
+     ecmaVersion: 'latest',
+     sourceType: 'module',
+     project: ['./tsconfig.json', './tsconfig.node.json'],
+     tsconfigRootDir: __dirname,
+   },
 ```
 
-## ⚙️ Запуск проекта
-
-1.  **Клонируйте репозиторий:**
-    ```bash
-    git clone [URL репозитория]
-    cd [название папки]
-    ```
-
-2.  **Установите зависимости:**
-    ```bash
-    npm install
-    ```
-    *или*
-    ```bash
-    yarn install
-    ```
-
-3.  **Запустите в режиме разработки:**
-    ```bash
-    npm run dev
-    ```
-    *или*
-    ```bash
-    yarn dev
-    ```
-    Откройте [http://localhost:5173](http://localhost:5173) (или другой порт, указанный Vite) в вашем браузере.
-
-## ☁️ Развертывание
-
-Проект настроен для развертывания на Firebase Hosting.
-
-1.  **Соберите проект для продакшена:**
-    ```bash
-    npm run build
-    ```
-    *или*
-    ```bash
-    yarn build
-    ```
-    Эта команда создаст папку `dist` с оптимизированными статическими файлами.
-
-2.  **Разверните на Firebase:**
-    Убедитесь, что у вас установлен [Firebase CLI](https://firebase.google.com/docs/cli) и вы вошли в свою учетную запись.
-    ```bash
-    firebase deploy --only hosting
-    ```
-    Эта команда загрузит содержимое папки `dist` на хостинг Firebase.
-
+- Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
