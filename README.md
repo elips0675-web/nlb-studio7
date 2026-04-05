@@ -1,27 +1,62 @@
-# React + TypeScript + Vite
+# Веб-сайт "Библиотека 2026"
+Это современный, многофункциональный и адаптивный веб-сайт для вымышленной "Библиотеки 2026". Проект демонстрирует широкий спектр услуг, предоставляемых библиотекой, от традиционного каталога книг до современных сервисов, таких как коворкинг, спортзал и даже обзорная площадка.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Ключевые особенности
+Современный дизайн: Чистый, адаптивный интерфейс, созданный с использованием Tailwind CSS.
+Интерактивность: Плавные анимации и переходы с помощью Framer Motion.
+Каталог услуг: Разделы для основных услуг (обзорная площадка, сауна, спортзал) и полиграфических услуг.
+Динамический калькулятор: Интерактивный калькулятор стоимости для полиграфических услуг.
+Новости и события: Страницы для отображения последних новостей и предстоящих событий с пагинацией.
+Компонентный подход: Проект построен на переиспользуемых React-компонентах.
+🛠️ Технологический стек
+Фреймворк: React
+Язык: TypeScript
+Стилизация: Tailwind CSS
+Роутинг: React Router DOM
+Анимации: Framer Motion
+Иконки: Lucide React
+Слайдер: React Slick
+Сборка: Vite
+Хостинг: Firebase Hosting
+📂 Структура проекта
+/src
+|-- /app
+|   |-- /components   # Переиспользуемые компоненты (Header, Footer, и т.д.)
+|   |-- /pages        # Основные страницы приложения (Home, Services, News, etc.)
+|   |-- /assets       # Статические ассеты
+|   |-- App.tsx       # Главный компонент приложения с роутингом
+|   +-- main.tsx      # Точка входа в приложение
+|-- ...
+⚙️ Запуск проекта
+Клонируйте репозиторий:
 
-Currently, two official plugins are available:
+git clone [URL репозитория]
+cd [название папки]
+Установите зависимости:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+npm install
+или
 
-## Expanding the ESLint configuration
+yarn install
+Запустите в режиме разработки:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware linting:
+npm run dev
+или
 
-- Configure the top-level `parserOptions` property like this:
+yarn dev
+Откройте http://localhost:5173 (или другой порт, указанный Vite) в вашем браузере.
 
-```js
-   parserOptions: {
-     ecmaVersion: 'latest',
-     sourceType: 'module',
-     project: ['./tsconfig.json', './tsconfig.node.json'],
-     tsconfigRootDir: __dirname,
-   },
-```
+☁️ Развертывание
+Проект настроен для развертывания на Firebase Hosting.
 
-- Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Соберите проект для продакшена:
+
+npm run build
+или
+
+yarn build
+Эта команда создаст папку dist с оптимизированными статическими файлами.
+
+Разверните на Firebase: Убедитесь, что у вас установлен Firebase CLI и вы вошли в свою учетную запись.
+
+firebase deploy --only hosting
