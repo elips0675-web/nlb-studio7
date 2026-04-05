@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import Slider from 'react-slick';
 import { Header } from '../components/header';
@@ -261,6 +261,7 @@ const sliderSettings = {
 
 export default function PrintingServiceDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const service = printingServiceDetails[id];
   const fileInputRef = useRef(null);
 
@@ -292,6 +293,17 @@ export default function PrintingServiceDetail() {
     const finalPrice = basePrice * multiplier * quantity;
     return finalPrice.toFixed(2);
   }, [quantity, options, service]);
+  
+  const handleOrder = () => {
+    const queryParams = new URLSearchParams({
+      serviceTitle: service.title,
+      quantity: quantity.toString(),
+      totalPrice: totalPrice,
+      options: JSON.stringify(options),
+    }).toString();
+
+    navigate(`/printing-services/order-confirmation?${queryParams}`);
+  };
 
   if (!service) {
     return <div className="flex items-center justify-center h-screen">Услуга не найдена</div>;
@@ -408,7 +420,7 @@ export default function PrintingServiceDetail() {
                   </p>
                 </div>
 
-                <button className={`w-full py-3 bg-gradient-to-r ${service.color} text-white rounded-xl hover:shadow-xl transition-all font-semibold flex items-center justify-center gap-2 group`}>
+                <button onClick={handleOrder} className={`w-full py-3 bg-gradient-to-r ${service.color} text-white rounded-xl hover:shadow-xl transition-all font-semibold flex items-center justify-center gap-2 group`}>
                   Заказать
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>

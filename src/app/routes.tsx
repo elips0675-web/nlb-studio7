@@ -11,6 +11,11 @@ import RegistrationPage from "./pages/registration";
 import ProfilePage from "./pages/profile";
 import BookDetailPage from "./pages/book-detail";
 import NotificationsPage from "./pages/notifications";
+import CafeDetailPage from "./pages/cafe-detail";
+import KidsZoneDetailPage from "./pages/kids-zone-detail";
+import LectureHallDetailPage from "./pages/lecture-hall-detail";
+import ConcertHallDetailPage from "./pages/concert-hall-detail";
+import PrintingOrderConfirmation from "./pages/printing-order-confirmation";
 
 export const router = createBrowserRouter([
   {
@@ -22,12 +27,32 @@ export const router = createBrowserRouter([
     Component: ServicesPage,
   },
   {
+    path: "/services/cafe",
+    Component: CafeDetailPage,
+  },
+  {
+    path: "/services/kids-zone",
+    Component: KidsZoneDetailPage,
+  },
+  {
+    path: "/services/lecture-hall",
+    Component: LectureHallDetailPage,
+  },
+  {
+    path: "/services/concert-hall",
+    Component: ConcertHallDetailPage,
+  },
+  {
     path: "/services/:id",
     Component: ServiceDetailPage,
   },
   {
     path: "/printing-services",
     Component: PrintingServicesCatalog,
+  },
+  {
+    path: "/printing-services/order-confirmation",
+    Component: PrintingOrderConfirmation,
   },
   {
     path: "/printing-services/:id",

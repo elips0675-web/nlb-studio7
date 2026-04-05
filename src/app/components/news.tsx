@@ -24,6 +24,13 @@ const newsItems = [
     description: 'Обсуждение новой книги и творческих планов с известным автором.',
     image: 'https://images.unsplash.com/photo-1516131206008-dd2c85b3b1dd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
+  {
+    id: 4,
+    title: 'Выставка «История книгопечатания»',
+    date: '8 июня 2024',
+    description: 'Узнайте о развитии технологий печати от Гутенберга до наших дней.',
+    image: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGQlMjBib29rcyUyMGxpYnJhcnl8ZW58MXx8fHwxNjc0MDIwMzY4fDA&ixlib=rb-1.2.1&q=80&w=1080',
+  },
 ];
 
 export function News() {
@@ -34,9 +41,9 @@ export function News() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Новости
           </h2>
-          <Link to="/all-news" className="flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+          <Link to="/all-news" className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-lg transition-all font-semibold flex items-center gap-2">
             <span>Все новости</span>
-            <ArrowRight className="w-5 h-5 ml-1" />
+            <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
 
