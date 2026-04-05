@@ -17,6 +17,7 @@ import LectureHallDetailPage from "./pages/lecture-hall-detail";
 import ConcertHallDetailPage from "./pages/concert-hall-detail";
 import PrintingOrderConfirmation from "./pages/printing-order-confirmation";
 import InteractiveMapPage from "./pages/interactive-map";
+import MinskMapPage from "./pages/minsk-map";
 
 export const router = createBrowserRouter([
   {
@@ -90,5 +91,9 @@ export const router = createBrowserRouter([
   {
     path: "/interactive-map",
     Component: InteractiveMapPage,
+  },
+  {
+    path: "/minsk-map",
+    Component: MinskMapPage,
   },
 ]);
