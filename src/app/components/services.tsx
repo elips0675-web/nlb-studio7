@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Wifi, Coffee, Monitor, Users, Printer, Clock } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Link } from 'react-router-dom';
 
 const services = [
@@ -14,45 +13,9 @@ const services = [
 
 export function Services() {
   return (
-    <section id="услуги" className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="услуги" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Images */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            {/* Main image */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1680534240478-08c865dc608f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZW9wbGUlMjBzdHVkeWluZyUyMGxpYnJhcnl8ZW58MXx8fHwxNzc1MDU2MzY2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Услуги библиотеки"
-                className="w-full h-[500px] object-cover"
-              />
-            </div>
-
-            {/* Small image overlay */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="absolute -bottom-8 -right-8 w-64 h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
-            >
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1728450136822-f0a58df17825?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbGlicmFyeSUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzc1MDMxMzA0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Цифровые технологии"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-
-            {/* Decorative blob */}
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-full blur-3xl" />
-          </motion.div>
-
+        <div className="grid lg:grid-cols-1 gap-16 items-center">
           {/* Right: Content */}
           <div>
             <motion.div
@@ -74,7 +37,7 @@ export function Services() {
             </motion.div>
 
             {/* Services grid */}
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {services.map((service, index) => {
                 const Icon = service.icon;
                 return (
