@@ -195,7 +195,7 @@ export function Events() {
                   </DialogFooter>
                 </DialogContent>
               </Dialog>
-              <a href="/all-events" className="px-10 py-4 bg-green-600 text-white rounded-full font-bold hover:bg-green-700 hover:shadow-lg transition-all whitespace-nowrap">
+              <a href="/all-events" className="px-8 py-3 bg-white text-green-600 rounded-full font-medium hover:shadow-xl transition-shadow whitespace-nowrap">
                 Посмотреть все
               </a>
             </div>
