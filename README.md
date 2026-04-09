@@ -36,6 +36,20 @@
 |-- ...
 ```
 
+## 📚 Документация
+
+- [Современный стек для разработки с ИИ-агентами](docs/ai-development-stack.md)
+- [Хостинг для ИИ-агентов в России и Беларуси](docs/ai-hosting-ru-by.md)
+- [Руководство по компонентам Bitrix](docs/bitrix-components-guide.md)
+- [Руководство по интеграции с Bitrix](docs/bitrix-integration-guide.md)
+- [Руководство по кастомизации](docs/customization-guide.md)
+- [Руководство по развертыванию](docs/deployment-guide.md)
+- [Часто задаваемые вопросы](docs/faq.md)
+- [Руководство по Headless WordPress](docs/headless-wordpress-guide.md)
+- [Руководство по Payload CMS](docs/payload-cms-guide.md)
+- [Структура проекта](docs/project-structure.md)
+- [Сравнение технологических стеков](docs/tech-stack-comparison.md)
+
 ## ⚙️ Запуск проекта
 
 1.  **Клонируйте репозиторий:**
