@@ -381,19 +381,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Комфорт и технологии для вашего обучения
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-              Мы создали идеальные условия для тех, кто стремится к знаниям. В вашем распоряжении — современные рабочие зоны, оборудованные всем необходимым для продуктивной учёбы и исследований.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Printing Services Section with Slider */}
       <section className="py-24 bg-gradient-to-br from-indigo-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
