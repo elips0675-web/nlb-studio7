@@ -121,7 +121,7 @@ const events = [
     attendees: 25,
     category: 'Для детей',
     color: 'from-pink-500 to-purple-500',
-    image: 'https://images.unsplash.com/photo-1620666060481-b5e05c871545?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdG9wJTIwbW90aW9uJTIwYW5pbWF0aW9uJTIwd29ya3Nob3B8ZW58MXx8fHwxNzc1MjU4MDQxfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1620666060481-b5e05c871545?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdG9wJTIwbW90aW9uJTIwYW5pbWF0aW9uJTIwd29ya3Nob3B8ZW58MXx8fHwxNzc1MjU4MDQxfDA&ixlib-rb-4.1.0&q=80&w=1080',
   },
   {
     id: 'french-cinema-classic',
@@ -157,7 +157,7 @@ const events = [
     attendees: 55,
     category: 'Образование',
     color: 'from-yellow-500 to-amber-500',
-    image: 'https://images.unsplash.com/photo-1554224155-1696413565d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnZlc3RpbmclMjB3b3Jrc2hvcHxlbnwxfHx8fDE3NzUyNTgwNzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1554224155-1696413565d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnZlc3RpbmclMjB3b3Jrc2hvcHxlbnwxfHx8fDE3NzUyNTgwNzF8MA&ixlib-rb-4.1.0&q=80&w=1080',
   },
   {
     id: 'photo-walk',
@@ -181,7 +181,7 @@ const events = [
     attendees: 80,
     category: 'Технологии',
     color: 'from-green-500 to-emerald-500',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcm5hbCUyMGl0JTIwZGVwYXJ0bWVudHxlbnwxfHx8fDE3NzUyNTgxMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcm5hbCUyMGl0JTIwZGVwYXJ0bWVudHxlbnwxfHx8fDE3NzUyNTgxMDJ8MA&ixlib-rb-4.1.0&q=80&w=1080',
   },
   {
     id: 'stand-up-comedy-night',
@@ -193,13 +193,13 @@ const events = [
     attendees: 120,
     category: 'Досуг',
     color: 'from-teal-500 to-cyan-600',
-    image: 'https://images.unsplash.com/photo-1583693231362-f7200a7b458b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGFuZCUyMHVwJTIwY29tZWR5JTIwbWljfGVufDF8fHx8MTc3NTI1ODExOXww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1583693231362-f7200a7b458b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGFuZCUyMHVwJTIwY29tZWR5JTIwbWljfGVufDF8fHx8MTc3NTI1ODExOXww&ixlib-rb-4.1.0&q=80&w=1080',
   }
 ];
 
 export function AllEvents() {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 12;
 
   const handleSignUp = (event: any) => {
     const storedEvents = localStorage.getItem('signedUpEvents');
