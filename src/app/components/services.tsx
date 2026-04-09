@@ -68,7 +68,7 @@ export function Services() {
             className="mt-16 text-center"
         >
             <Link to="/services">
-            <button className="px-10 py-5 bg-gradient-to-r from-red-600 to-orange-500 text-white rounded-full hover:shadow-2xl transition-shadow text-lg font-semibold">
+            <button className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-full hover:shadow-xl transition-shadow text-lg font-semibold">
                 Все услуги
             </button>
             </Link>
