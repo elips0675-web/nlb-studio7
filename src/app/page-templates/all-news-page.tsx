@@ -75,7 +75,7 @@ const newsItems = [
     title: 'Книжный клуб: обсуждаем классику',
     date: '22 мая 2024',
     description: 'В этом месяце обсуждаем "Мастера и Маргариту". Присоединяйтесь к дискуссии!',
-    image: 'https://images.unsplash.com/photo-1550399105-c4db5fb85c18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rJTIwY2x1YnxlbnwxfHx8fDE3NzUyNjQ2MDl8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1550399105-c4db5fb85c18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rJTIwY2x1YnxlbnwxfHx8fDE3NzUyNjQ2MDl8MA&ixlib-rb-4.1.0&q=80&w=1080',
   },
   {
     id: 10,
@@ -103,7 +103,7 @@ const newsItems = [
     title: 'Архитектурный конкурс: проект нового крыла библиотеки',
     date: '10 мая 2024',
     description: 'Приглашаем архитекторов и дизайнеров к участию в конкурсе на лучший проект.',
-    image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmUlMjBjb250ZXN0fGVufDF8fHx8MTc3NTI2NDY2N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmUlMjBjb250ZXN0fGVufDF8fHx8MTc3NTI2NDY2N3ww&ixlib-rb-4.1.0&q=80&w=1080',
   },
   {
     id: 14,
@@ -116,7 +116,7 @@ const newsItems = [
 
 export default function AllNewsPage() {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 12;
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
