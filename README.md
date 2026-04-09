@@ -46,6 +46,7 @@
 - [Руководство по развертыванию](docs/deployment-guide.md)
 - [Часто задаваемые вопросы](docs/faq.md)
 - [Руководство по Headless WordPress](docs/headless-wordpress-guide.md)
+- [Руководство по миграции на Next.js 15](docs/nextjs-migration-guide.md)
 - [Руководство по Payload CMS](docs/payload-cms-guide.md)
 - [Структура проекта](docs/project-structure.md)
 - [Сравнение технологических стеков](docs/tech-stack-comparison.md)
