@@ -52,27 +52,17 @@ const ServicesSlider: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Content & Pricing */}
+                    {/* Content */}
                     <div className="p-4 sm:p-6 flex flex-col flex-grow">
                       <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-gray-600 mb-4 text-sm line-clamp-2">
+                      <p className="text-gray-600 mb-4 text-sm">
                         {service.description}
                       </p>
-                      <div className="space-y-2 sm:space-y-3 flex-grow mt-2">
-                        {service.prices.map((item) => (
-                          <div key={item.name} className="flex items-center justify-between">
-                            <span className="text-sm text-gray-700">{item.name}</span>
-                            <span className={`font-bold text-base bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
-                              {item.price}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-
+                      
                       {/* Button */}
-                      <Link to={`/printing-services/${service.id}`} className={`mt-6 w-full py-3 bg-gradient-to-r ${service.color} text-white rounded-xl hover:shadow-lg transition-all font-medium flex items-center justify-center gap-2 group`}>
+                      <Link to={`/printing-services/${service.id}`} className={`mt-auto w-full py-3 bg-gradient-to-r ${service.color} text-white rounded-xl hover:shadow-lg transition-all font-medium flex items-center justify-center gap-2 group`}>
                         Подробнее
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
