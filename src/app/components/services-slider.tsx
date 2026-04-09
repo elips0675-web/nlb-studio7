@@ -42,13 +42,13 @@ const ServicesSlider: React.FC = () => {
                   <Link to={`/printing-services/${service.id}`} className="block group">
                     <div className="relative rounded-lg overflow-hidden shadow-lg h-96">
                       <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300 group-hover:bg-opacity-60"></div>
+                      
                       <div className={`absolute top-4 right-4 w-12 h-12 bg-gradient-to-br ${service.color} rounded-lg shadow-lg flex items-center justify-center`}>
                         <Icon className="w-6 h-6 text-white" />
                       </div>
-                      <div className="absolute bottom-0 left-0 p-6 text-white">
+                      <div className="absolute bottom-0 left-0 right-0 pt-24 pb-6 px-6 text-white bg-gradient-to-t from-black/80 to-transparent">
                         <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                        <p className="text-sm text-gray-200">{service.description}</p>
+                        <p className="text-sm text-gray-100">{service.description}</p>
                       </div>
                     </div>
                   </Link>

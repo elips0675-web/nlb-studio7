@@ -31,6 +31,20 @@ const newsItems = [
     description: 'Узнайте о развитии технологий печати от Гутенберга до наших дней.',
     image: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGQlMjBib29rcyUyMGxpYnJhcnl8ZW58MXx8fHwxNjc0MDIwMzY4fDA&ixlib=rb-1.2.1&q=80&w=1080',
   },
+  {
+    id: 5,
+    title: 'Клуб любителей классики: обсуждаем «Войну и мир»',
+    date: '5 июня 2024',
+    description: 'Присоединяйтесь к нашему ежемесячному клубу для глубокого погружения в шедевры мировой литературы.',
+    image: 'https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+  {
+    id: 6,
+    title: 'Детский час: читаем сказки',
+    date: '2 июня 2024',
+    description: 'Каждое воскресенье мы читаем вслух лучшие сказки для самых маленьких слушателей.',
+    image: 'https://images.unsplash.com/photo-1501724398958-b1c1c1a96c23?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
 ];
 
 export function News() {
@@ -47,7 +61,7 @@ export function News() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {newsItems.map((item, index) => (
             <motion.div
               key={item.id}

@@ -92,15 +92,15 @@ export function Hero() {
       {/* Arrow Buttons */}
       <button 
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 z-20 p-2 rounded-full transition-colors hover:bg-black/20"
+        className="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="h-6 w-6 text-gray-800" />
       </button>
       <button 
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 z-20 p-2 rounded-full transition-colors hover:bg-black/20"
+        className="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="h-6 w-6 text-gray-800" />
       </button>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
