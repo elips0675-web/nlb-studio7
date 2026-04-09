@@ -1,11 +1,10 @@
 import { motion } from 'motion/react';
-import { Eye, Droplet, Dumbbell, Wifi, Clock, Users, ArrowRight, Check, Printer, FileText, CreditCard, BookOpen, Package, ScanLine, Coffee, Gamepad2, Mic, Presentation } from 'lucide-react';
+import { Eye, Droplet, Dumbbell, Wifi, Clock, Users, ArrowRight, Check, Coffee, Gamepad2, Mic, Presentation } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Header } from '../components/header';
 import { Footer } from '../components/footer';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { PushNotificationBanner } from '../components/PushNotificationBanner';
-import Slider from 'react-slick';
+import ServicesSlider from '../components/services-slider';
 
 const services = [
   {
@@ -76,7 +75,7 @@ const services = [
       'Возможность онлайн-трансляций',
       'Комфортные кресла',
     ],
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWN0dXJlJTIwaGFsbHxlbnwxfHx8fDE2NzQwMDUxNTE&ixlib=rb-1.2.1&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWN0dXJlJTIwaGFsbHxlbnwxfHx8fDE2NzQwMDUxNTE&ixlib-rb-1.2.1&q=80&w=1080',
     color: 'from-cyan-500 to-blue-500',
     bgColor: 'bg-cyan-50',
   },
@@ -94,7 +93,7 @@ const services = [
       'Гримёрные комнаты',
       'Отличная акустика',
     ],
-    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25jZXJ0JTIwaGFsbHxlbnwxfHx8fDE2NzQwMDUyMjk&ixlib=rb-1.2.1&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25jZXJ0JTIwaGFsbHxlbnwxfHx8fDE2NzQwMDUyMjk&ixlib-rb-1.2.1&q=80&w=1080',
     color: 'from-red-500 to-orange-500',
     bgColor: 'bg-red-50',
   },
@@ -112,7 +111,7 @@ const services = [
       'Мастер-классы по выходным',
       'Аниматоры и присмотр',
     ],
-    image: 'https://images.unsplash.com/photo-1556388250-b4c74c57376c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraWRzJTIwY2x1YnxlbnwxfHx8fDE2NzQwMDUyOTV8MA&ixlib=rb-1.2.1&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1556388250-b4c74c57376c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxraWRzJTIwY2x1YnxlbnwxfHx8fDE2NzQwMDUyOTV8MA&ixlib-rb-1.2.1&q=80&w=1080',
     color: 'from-pink-500 to-rose-500',
     bgColor: 'bg-pink-50',
   },
@@ -130,7 +129,7 @@ const services = [
       'Персональные тренировки',
       'Раздевалки с душем',
     ],
-    image: 'https://images.unsplash.com/photo-1728450136822-f0a58df17825?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbGlicmFyeSUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzc1MDMxMzA0fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1728450136822-f0a58df17825?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbGlicmFyeSUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzc1MDMxMzA0fDA&ixlib-rb-4.1.0&q=80&w=1080',
     color: 'from-green-500 to-emerald-500',
     bgColor: 'bg-green-50',
   },
@@ -148,98 +147,12 @@ const services = [
       'Принтер и сканер',
       'Кофе и чай',
     ],
-    image: 'https://images.unsplash.com/photo-1773352517110-ec61a8ade9f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rJTIwY29sbGVjdGlvbiUyMHNoZWx2ZXN8ZW58MXx8fHwxNzc1MDU2MzY2fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1773352517110-ec61a8ade9f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rJTIwY29sbGVjdGlvbiUyMHNoZWx2ZXN8ZW58MXx8fHwxNzc1MDU2MzY2fDA&ixlib-rb-4.1.0&q=80&w=1080',
     color: 'from-purple-500 to-pink-500',
     bgColor: 'bg-purple-50',
   },
 ];
 
-const printingServices = [
-  { 
-    id: 'document-printing',
-    icon: Printer,
-    title: 'Печать и копирование',
-    description: 'Ч/б и цветная печать, копирование. Печать с USB и e-mail.',
-    image: 'https://images.unsplash.com/photo-1771173479042-810085465e49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBkb2N1bWVudHMlMjBwcmludGluZ3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib-rb-4.1.0&q=80&w=1080',
-    prices: [
-      { name: 'А4 ч/б (печать/копир.)', price: '5₽' },
-      { name: 'А4 цвет (печать/копир.)', price: '15₽' },
-      { name: 'А3 ч/б (печать/копир.)', price: '10₽' },
-      { name: 'А3 цвет (печать/копир.)', price: '30₽' },
-    ],
-    color: 'from-blue-500 to-cyan-500',
-  },
-  {
-    id: 'scanning',
-    icon: ScanLine,
-    title: 'Сканирование',
-    description: 'Профессиональное сканирование документов и фотографий.',
-    image: 'https://images.unsplash.com/photo-1581094794329-c8592a1881d8?ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2FubmVyJTIwZG9jdW1lbnR8ZW58MHx8fHwxNzE0NTg0NTI5fDA&ixlib-rb-4.0.3&w=1080',
-    prices: [
-      { name: 'Сканирование А4', price: '10₽' },
-      { name: 'Сканирование А3', price: '20₽' },
-      { name: 'Сохранение на USB', price: 'бесплатно' },
-      { name: 'Отправка на e-mail', price: '50₽' },
-    ],
-    color: 'from-teal-500 to-emerald-500',
-  },
-  {
-    id: 'bookbinding',
-    icon: BookOpen,
-    title: 'Переплёт и ламинирование',
-    description: 'Различные виды переплёта и защитное ламинирование.',
-    image: 'https://images.unsplash.com/photo-1762113246719-1a6adc837209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib29rYmluZGluZyUyMGhhcmRjb3ZlciUyMGJvb2tzfGVufDF8fHx8MTc3NTA1NzE0N3ww&ixlib-rb-4.1.0&q=80&w=1080',
-    prices: [
-      { name: 'Скрепка (до 40 л.)', price: '30₽' },
-      { name: 'Пружина (до 150 л.)', price: '100₽' },
-      { name: 'Термоклей (до 300 л.)', price: '150₽' },
-      { name: 'Ламинирование А4', price: '50₽' },
-    ],
-    color: 'from-indigo-500 to-purple-500',
-  },
-  {
-    id: 'business-cards',
-    icon: CreditCard,
-    title: 'Визитки',
-    description: 'Профессиональная печать визитных карточек',
-    image: 'https://images.unsplash.com/photo-1718670013921-2f144aba173a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmludGluZyUyMHByZXNzJTIwYnVzaW5lc3MlMjBjYXJkc3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib-rb-4.1.0&q=80&w=1080',
-    prices: [
-      { name: 'Односторонние (100 шт.)', price: '400₽' },
-      { name: 'Двухсторонние (100 шт.)', price: '600₽' },
-      { name: 'Дизайнерская бумага', price: '+200₽' },
-      { name: 'Срочная печать (1 час)', price: '+300₽' },
-    ],
-    color: 'from-purple-500 to-pink-500',
-  },
-  {
-    id: 'brochures',
-    icon: FileText,
-    title: 'Брошюры и буклеты',
-    description: 'Печать рекламных материалов и каталогов',
-    image: 'https://images.unsplash.com/photo-1612351217829-9e467539406f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicm9jaHVyZXMlMjBmbHllcnMlMjBjYXRhbG9nfGVufDF8fHx8MTc3NTA1NzE0NHww&ixlib-rb-4.1.0&q=80&w=1080',
-    prices: [
-      { name: 'А4 буклет (2 фальца)', price: '50₽' },
-      { name: 'А5 брошюра (8 стр.)', price: '150₽' },
-      { name: 'Каталог А4 (20 стр.)', price: '500₽' },
-      { name: 'Дизайн-макет', price: 'от 1000₽' },
-    ],
-    color: 'from-green-500 to-emerald-500',
-  },
-  {
-    id: 'large-format',
-    icon: Package,
-    title: 'Широкоформатная печать',
-    description: 'Баннеры, плакаты и постеры любого размера',
-    image: 'https://images.unsplash.com/photo-1595142545813-06fee27f3dcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYW5uZXIlMjBwb3N0ZXIlMjBwcmludGluZ3xlbnwxfHx8fDE3NzUwNTcxNDR8MA&ixlib-rb-4.1.0&q=80&w=1080',
-    prices: [
-      { name: 'Плакат А2 (бумага)', price: '200₽' },
-      { name: 'Плакат А1 (холст)', price: '700₽' },
-      { name: 'Баннер (1 м²)', price: '500₽' },
-      { name: 'Фото на пенокартоне', price: 'от 1200₽' },
-    ],
-    color: 'from-orange-500 to-red-500',
-  },
-];
 
 export default function ServicesPage() {
   return (
@@ -381,165 +294,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Printing Services Section with Slider */}
-      <section className="py-24 bg-gradient-to-br from-indigo-50 to-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-2 bg-white text-indigo-600 rounded-full text-sm mb-4 shadow-sm">
-              📄 Полиграфия
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Печатные услуги
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-              Профессиональная печать любых форматов и тиражей с использованием современного оборудования
-            </p>
-            <div className="mt-8">
-                <Link to="/printing-services" className="inline-block px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full hover:shadow-xl transition-shadow font-semibold">
-                    Перейти в каталог
-                </Link>
-            </div>
-          </motion.div>
-
-          <PushNotificationBanner />
-
-          {/* Slider */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="px-2 sm:px-8"
-          >
-            <Slider
-              dots={true}
-              infinite={true}
-              speed={500}
-              slidesToShow={3}
-              slidesToScroll={1}
-              autoplay={true}
-              autoplaySpeed={4000}
-              arrows={true}
-              responsive={[
-                {
-                  breakpoint: 1024,
-                  settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    arrows: false,
-                  }
-                },
-                {
-                  breakpoint: 640,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '20px',
-                  }
-                }
-              ]}
-            >
-              {printingServices.map((service) => {
-                const Icon = service.icon;
-                return (
-                  <div key={service.title} className="px-2 sm:px-4">
-                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group h-full flex flex-col">
-                        <div className="flex flex-col h-full">
-                          {/* Image */}
-                          <div className="relative h-48 sm:h-56 overflow-hidden">
-                            <ImageWithFallback
-                              src={service.image}
-                              alt={service.title}
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                            
-                            {/* Icon Badge */}
-                            <div className={`absolute top-3 right-3 sm:top-4 sm:right-4 w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${service.color} rounded-xl shadow-lg flex items-center justify-center`}>
-                              <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                            </div>
-
-                            {/* Title on image */}
-                            <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
-                              <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
-                                {service.title}
-                              </h3>
-                              <p className="text-xs sm:text-sm text-white/90 line-clamp-2">
-                                {service.description}
-                              </p>
-                            </div>
-                          </div>
-
-                          {/* Pricing */}
-                          <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                            <div className="space-y-2 sm:space-y-3 flex-grow">
-                              {service.prices.map((item) => (
-                                <div key={item.name} className="flex items-center justify-between">
-                                  <span className="text-sm sm:text-base text-gray-700">{item.name}</span>
-                                  <span className={`font-bold text-base sm:text-lg bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>
-                                    {item.price}
-                                  </span>
-                                </div>
-                              ))}
-                            </div>
-
-                            {/* Button */}
-                            <Link to={`/printing-services/${service.id}`} className={`mt-4 sm:mt-6 w-full py-2.5 sm:py-3 bg-gradient-to-r ${service.color} text-white rounded-xl hover:shadow-lg transition-all text-sm sm:text-base font-medium flex items-center justify-center gap-2 group`}>
-                              Подробнее
-                              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </Slider>
-          </motion.div>
-
-          {/* Additional Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 sm:mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
-          >
-            <div className="bg-white rounded-xl p-5 sm:p-6 shadow-md text-center">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-                <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
-              <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Быстрое выполнение</h4>
-              <p className="text-xs sm:text-sm text-gray-600">Срочные заказы от 30 минут</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-5 sm:p-6 shadow-md text-center">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-                <Check className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
-              <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Высокое качество</h4>
-              <p className="text-xs sm:text-sm text-gray-600">Профессиональное оборудование</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-5 sm:p-6 shadow-md text-center sm:col-span-2 md:col-span-1">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
-              <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Скидки постоянным</h4>
-              <p className="text-xs sm:text-sm text-gray-600">До 20% для читателей</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <ServicesSlider />
 
       {/* Info Cards */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
