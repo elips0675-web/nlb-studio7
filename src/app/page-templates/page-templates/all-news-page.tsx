@@ -29,13 +29,6 @@ const newsItems = [
     image: 'https://images.unsplash.com/photo-1593941707882-9a8b1a8f6e2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2lmJTIwYm9va3N8ZW58MXx8fHwxNzc1MjY0NTMxfDA&ixlib=rb-4.1.0&q=80&w=1080',
   },
   {
-    id: 3,
-    title: 'Онлайн-встреча с писателем-фантастом',
-    date: '10 июня 2024',
-    description: 'Обсуждение новой книги и творческих планов с известным автором.',
-    image: 'https://images.unsplash.com/photo-1611078489816-434312675204?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3cml0ZXIlMjBhdCUyMGElMjBkZXNrfGVufDF8fHx8MTc3NTI2NDUzMnww&ixlib=rb-4.1.0&q=80&w=1080',
-  },
-  {
     id: 4,
     title: 'Курсы программирования для детей',
     date: '8 июня 2024',
