@@ -43,14 +43,6 @@ export const catalogServices = [
     color: 'from-indigo-500 to-purple-500',
   },
   {
-    id: 'mugs',
-    icon: CupSoda,
-    title: 'Печать на кружках',
-    description: 'Уникальный подарок или корпоративный сувенир с вашим фото, лого или надписью.',
-    image: 'https://images.unsplash.com/photo-1516788419857-a41a4c921102?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBtdWclMjBwcmludGluZ3xlbnwxfHx8fDE3NzUzMDMwMTF8MA&ixlib-rb-4.1.0&q=80&w=1080',
-    color: 'from-red-500 to-amber-500',
-  },
-  {
     id: 't-shirts',
     icon: Shirt,
     title: 'Печать на футболках',

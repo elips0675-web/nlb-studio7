@@ -488,12 +488,12 @@ export default function ServiceDetailPage({ id: propId }: { id?: string }) {
 
               {/* Quick Info */}
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4">
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 flex flex-col items-center">
                   <div className="flex items-center gap-2 mb-2">
                     <Clock className="w-5 h-5 text-blue-600" />
                     <h4 className="font-semibold text-gray-900">Режим работы</h4>
                   </div>
-                  <div className="space-y-1 text-sm text-gray-700">
+                  <div className="space-y-1 text-sm text-gray-700 text-center">
                     {service.schedule.map((item: any, index: number) => (
                       <div key={index}>
                         <span className="font-medium">{item.day}:</span> {item.time}
@@ -502,12 +502,12 @@ export default function ServiceDetailPage({ id: propId }: { id?: string }) {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4">
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 flex flex-col items-center">
                   <div className="flex items-center gap-2 mb-2">
                     <Phone className="w-5 h-5 text-purple-600" />
                     <h4 className="font-semibold text-gray-900">Контакты</h4>
                   </div>
-                  <div className="space-y-1 text-sm text-gray-700">
+                  <div className="space-y-1 text-sm text-gray-700 text-center">
                     <div>{service.contacts.phone}</div>
                     <div>{service.contacts.email}</div>
                   </div>

@@ -52,9 +52,9 @@ const printingServiceDetails = {
     ],
     calculator: {
         options: [
+            { id: 'lamination', name: 'Ламинация', type: 'select', values: ['Нет', 'Матовая', 'Глянцевая'], default: 'Нет' },
             { id: 'paper', name: 'Бумага', type: 'radio', values: ['Мелованная 300г', 'Дизайнерская'], default: 'Мелованная 300г' },
             { id: 'sides', name: 'Стороны', type: 'radio', values: ['Односторонние', 'Двусторонние'], default: 'Односторонние' },
-            { id: 'lamination', name: 'Ламинация', type: 'select', values: ['Нет', 'Матовая', 'Глянцевая'], default: 'Нет' },
         ],
         pricing: {
             base: 5, 
@@ -372,14 +372,14 @@ export default function PrintingServiceDetail() {
                       {opt.type === 'radio' && (
                         <div className="flex flex-wrap gap-2">
                           {opt.values.map(val => (
-                            <button key={val} onClick={() => handleOptionChange(opt.id, val)} className={`px-4 py-2 rounded-lg text-sm transition ${options[opt.id] === val ? `bg-gradient-to-r ${service.color} text-white shadow` : 'bg-white border border-gray-300 hover:bg-gray-100'}`}>
+                            <button key={val} onClick={() => handleOptionChange(opt.id, val)} className={`px-4 py-3 rounded-lg text-sm transition ${options[opt.id] === val ? `bg-gradient-to-r ${service.color} text-white shadow` : 'bg-white border border-gray-300 hover:bg-gray-100'}`}>
                               {val}
                             </button>
                           ))}
                         </div>
                       )}
                       {opt.type === 'select' && (
-                        <select onChange={(e) => handleOptionChange(opt.id, e.target.value)} value={options[opt.id]} className="w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                        <select onChange={(e) => handleOptionChange(opt.id, e.target.value)} value={options[opt.id]} className="w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-3">
                           {opt.values.map(val => <option key={val}>{val}</option>)}
                         </select>
                       )}
