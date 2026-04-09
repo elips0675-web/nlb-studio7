@@ -34,170 +34,134 @@
 npm run dev --prefix admin-demo
 ```
 
-## Выбор CSS фреймворка для Битрикс
+## Создание нового шаблона Битрикс с Bootstrap
 
-**Bootstrap** — это очень популярный и надежный выбор для работы с «1С-Битрикс: Управление сайтом», и вот почему:
+Это классический и самый надежный способ создания темы для «1С-Битрикс: Управление сайтом». Bootstrap идеально подходит для быстрой разработки адаптивных сайтов благодаря своей готовой сетке и компонентам.
 
-1.  **Совместимость:** Многие готовые шаблоны и решения для Битрикс уже построены на Bootstrap. Это упрощает интеграцию и кастомизацию.
-2.  **Сообщество и документация:** У Bootstrap огромное сообщество и отличная документация. Легко найти ответы на вопросы и готовые решения.
-3.  **Компоненты:** Он предоставляет большой набор готовых к использованию компонентов (кнопки, формы, модальные окна, сетка), что значительно ускоряет разработку.
-4.  **Адаптивность:** Встроенная 12-колоночная сетка позволяет легко и быстро создавать адаптивные сайты, которые хорошо выглядят на всех устройствах.
+### Шаг 1: Создание структуры папок и файлов
 
-**Альтернативы Bootstrap:**
+1.  Перейдите в папку `/local/templates/` вашего проекта. Это лучшее место для кастомных шаблонов, так как оно не затрагивается обновлениями системы.
 
-Если вы ищете что-то другое, вот несколько хороших вариантов:
+2.  Создайте новую папку для вашего шаблона. Назовем ее `bootstrap_template`.
 
-1.  **Tailwind CSS:**
-    *   **Подход:** Это utility-first фреймворк. Вместо готовых компонентов (как `.btn-primary` в Bootstrap) вы используете классы-утилиты (например, `bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`).
-    *   **Плюсы:** Дает невероятную гибкость в дизайне без написания собственного CSS. Позволяет создавать уникальные интерфейсы.
-    *   **Минусы:** Более высокий порог вхождения, если вы привыкли к компонентным фреймворкам. Требует шага сборки (через PostCSS).
+3.  Внутри `/local/templates/bootstrap_template/` создайте следующие файлы:
+    *   `description.php`: Содержит название и описание шаблона для админ-панели Битрикс.
+    *   `header.php`: Верхняя часть HTML-разметки, включая `<head>` и шапку сайта.
+    *   `footer.php`: Нижняя часть HTML-разметки, включая подвал и подключение скриптов.
+    *   `styles.css`: Файл для стилей, который Битрикс подключает по умолчанию.
+    *   `template_styles.css`: Наш основной файл для кастомных стилей. Мы будем подключать его вручную.
 
-2.  **Foundation:**
-    *   Очень мощный и гибкий фреймворк, похожий на Bootstrap, но считается более "профессиональным" и менее "шаблонным". Отличный выбор для сложных и кастомных проектов.
+### Шаг 2: Наполнение базовых файлов
 
-3.  **Bulma:**
-    *   Современный CSS-фреймворк, основанный на Flexbox. Он легче, чем Bootstrap, и очень прост в изучении. Не содержит JavaScript, что может быть как плюсом, так и минусом.
+**1. `description.php`**
 
-**Рекомендация:**
+Добавьте этот код, чтобы ваш шаблон появился в списке доступных:
 
-*   **Для большинства проектов на Битрикс, особенно если важна скорость разработки и вы используете готовые темы, — Bootstrap будет лучшим и самым безопасным выбором.**
-*   Если вы хотите создать полностью уникальный дизайн с нуля и готовы потратить немного больше времени на настройку, посмотрите в сторону **Tailwind CSS**.
+```php
+<?php
+$arTemplate = array(
+    "NAME" => "Новый шаблон на Bootstrap",
+    "DESCRIPTION" => "Шаблон сайта с использованием Bootstrap 5"
+);
+?>
+```
 
-В вашем случае, если вы переводите существующий сайт или начинаете новый стандартный проект, я бы рекомендовал остановиться на **Bootstrap**.
+**2. `header.php`**
 
-## Интеграция Tailwind CSS в Битрикс
+Это основа вашего сайта. Скопируйте этот код, он включает все необходимое для старта.
 
-Отличный вопрос! Интеграция Tailwind CSS в «1С-Битрикс» — это прекрасный способ модернизировать разработку и получить полный контроль над дизайном. В отличие от Bootstrap, Tailwind требует шага сборки, но настроить его не так сложно, как кажется.
+```php
+<?php
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-Вот пошаговое руководство, как это сделать правильно.
+use Bitrix\Main\Page\Asset;
+?>
+<!doctype html>
+<html lang="<?= LANGUAGE_ID; ?>">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-### Основная идея
+    <title><?$APPLICATION->ShowTitle()?></title>
 
-Мы настроим Tailwind CSS так, чтобы он сканировал ваши `.php` файлы шаблона Битрикс, находил в них utility-классы (например, `text-red-500`, `p-4`, `flex`) и автоматически генерировал один-единственный CSS-файл, который вы подключите в шаблоне сайта.
-
----
-
-### Пошаговая инструкция
-
-Предположим, ваш шаблон сайта находится в папке `/local/templates/my_template/`.
-
-**Шаг 1: Подготовка окружения**
-
-1.  **Установите Node.js и npm**, если они у вас не установлены.
-2.  Откройте терминал и перейдите в папку вашего шаблона:
-    ```bash
-    cd /path/to/your/project/local/templates/my_template/
-    ```
-3.  Инициализируйте Node.js проект. Эта команда создаст файл `package.json`:
-    ```bash
-    npm init -y
-    ```
-
-**Шаг 2: Установка Tailwind CSS**
-
-1.  Установите необходимые пакеты (`tailwindcss`, `postcss`, `autoprefixer`) как зависимости для разработки:
-    ```bash
-    npm install -D tailwindcss postcss autoprefixer
-    ```
-2.  Создайте конфигурационные файлы для Tailwind и PostCSS. Выполните команду:
-    ```bash
-    npx tailwindcss init -p
-    ```
-    Это создаст два файла: `tailwind.config.js` и `postcss.config.js`.
-
-**Шаг 3: Настройка Tailwind для сканирования шаблонов Битрикс**
-
-Это самый важный шаг. Вам нужно указать Tailwind, где находятся ваши файлы, чтобы он мог найти используемые классы.
-
-1.  Откройте файл `tailwind.config.js`.
-2.  Найдите ключ `content` и укажите пути к файлам вашего шаблона. Это должны быть `header.php`, `footer.php` и все файлы шаблонов компонентов.
-
-    ```javascript
-    /** @type {import('tailwindcss').Config} */
-    module.exports = {
-      content: [
-        // Основные файлы шаблона
-        "./header.php",
-        "./footer.php",
-        // Все шаблоны компонентов внутри этого шаблона сайта
-        "./components/**/*.php",
-        // Если вы используете JS-файлы для динамического добавления классов
-        "./script.js" 
-      ],
-      theme: {
-        extend: {},
-      },
-      plugins: [],
-    }
-    ```
-    *   **Совет:** Путь `./components/**/*.php` будет сканировать шаблоны компонентов Битрикс (например, `news.list`, `main.feedback` и т.д.), которые вы скопировали в свой шаблон сайта.
-
-**Шаг 4: Создание исходного CSS-файла**
-
-1.  Создайте папку (например, `src`) и в ней файл `input.css`.
-    `/local/templates/my_template/src/input.css`
-
-2.  Добавьте в этот файл три основные директивы Tailwind:
-    ```css
-    @tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-    ```
-
-**Шаг 5: Настройка скриптов сборки**
-
-1.  Откройте ваш файл `package.json`.
-2.  Добавьте в раздел `"scripts"` команды для сборки и отслеживания изменений:
-
-    ```json
-    "scripts": {
-      "build": "tailwindcss -i ./src/input.css -o ./template_styles.css --minify",
-      "watch": "tailwindcss -i ./src/input.css -o ./template_styles.css --watch"
-    },
-    ```
-    *   `build`: Эта команда создаст финальный, сжатый CSS-файл `template_styles.css` для продакшена.
-    *   `watch`: Эта команда будет следить за изменениями в ваших `.php` и `.js` файлах и автоматически пересобирать `template_styles.css` во время разработки.
-
-**Шаг 6: Сборка и подключение CSS в Битриксе**
-
-1.  **Запустите сборку.** В терминале, находясь в папке шаблона, выполните:
-    ```bash
-    npm run build 
-    ```
-    В корне вашего шаблона появится файл `template_styles.css`.
-
-2.  **Подключите сгенерированный файл** в `header.php` вашего шаблона. Используйте стандартный API Битрикса:
-    ```php
-    <?php
-    // /local/templates/my_template/header.php
-
-    // ... другие подключения
-    use Bitrix\Main\Page\Asset;
-
-    // Подключаем наш скомпилированный CSS
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/template_styles.css'); 
+    <?
+    // Подключение Bootstrap 5 через CDN
+    Asset::getInstance()->addString('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">');
+    
+    // Подключение наших кастомных стилей
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/template_styles.css");
+    
+    // Вывод мета-тегов, стилей и скриптов, добавленных через API Битрикса
+    $APPLICATION->ShowHead();
     ?>
-    ```
+</head>
+<body>
 
-**Шаг 7: Процесс разработки**
+<?
+// Отображение панели администратора
+$APPLICATION->ShowPanel();
+?>
 
-1.  Во время разработки запускайте в терминале команду:
-    ```bash
-    npm run watch
-    ```
-2.  Теперь вы можете просто открывать `.php` файлы шаблонов (компонентов, `header.php` и т.д.) и добавлять классы Tailwind прямо в HTML.
-    ```html
-    <!-- Пример в каком-нибудь template.php -->
-    <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
-      <div class="shrink-0">
-        <img class="h-12 w-12" src="/path/to/logo.svg" alt="ChitChat Logo">
-      </div>
-      <div>
-        <div class="text-xl font-medium text-black">ChitChat</div>
-        <p class="text-slate-500">You have a new message!</p>
-      </div>
+<header class="p-3 mb-3 border-bottom">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                Логотип
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 link-secondary">Главная</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">Каталог</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">О нас</a></li>
+                <li><a href="#" class="nav-link px-2 link-dark">Контакты</a></li>
+            </ul>
+        </div>
     </div>
-    ```
-3.  При каждом сохранении файла Tailwind автоматически обновит `template_styles.css`, и вы сразу увидите изменения на сайте.
+</header>
 
-Перед выгрузкой сайта на боевой сервер не забудьте один раз запустить `npm run build` для создания оптимизированной версии CSS.
+<main class="container">
+```
+
+**3. `footer.php`**
+
+Этот файл закрывает основные теги и подключает JavaScript.
+
+```php
+</main> <!-- Закрываем .container из header.php -->
+
+<footer class="py-3 my-4">
+    <div class="container">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li><a href="#" class="nav-link px-2 text-muted">Главная</a></li>
+            <li><a href="#" class="nav-link px-2 text-muted">Каталог</a></li>
+            <li><a href="#" class="nav-link px-2 text-muted">О нас</a></li>
+        </ul>
+        <p class="text-center text-muted">© <?= date("Y"); ?> Название компании</p>
+    </div>
+</footer>
+
+<?
+// Подключение JS Bootstrap 5 через CDN
+Asset::getInstance()->addString('<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>');
+?>
+
+</body>
+</html>
+```
+
+### Шаг 3: Применение шаблона
+
+1.  Зайдите в админ-панель Битрикс.
+2.  Перейдите в **Настройки → Настройки продукта → Сайты → Список сайтов**.
+3.  Откройте настройки вашего сайта (например, `s1`).
+4.  В поле **"Шаблон сайта"** найдите и выберите ваш "Новый шаблон на Bootstrap".
+5.  Сохраните изменения.
+
+### Шаг 4: Как работать дальше
+
+Теперь у вас есть рабочая основа. 
+
+*   **Контент страниц** будет автоматически выводиться между `header.php` и `footer.php` (внутри тега `<main class="container">`).
+*   **Компоненты Битрикс** (новости, каталоги, формы) размещаются на страницах через визуальный редактор или в коде.
+*   Чтобы стилизовать компоненты, копируйте их шаблоны в свою папку `/local/templates/bootstrap_template/components/` и смело используйте в них HTML-теги с классами Bootstrap.
+*   Ваши собственные, уникальные стили добавляйте в файл `template_styles.css`.
