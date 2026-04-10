@@ -1,5 +1,12 @@
 export const newsItems = [
   {
+    id: 15,
+    title: 'Новая эра библиотеки: внедрение ИИ-ассистента',
+    date: '18 июня 2024',
+    description: 'Мы рады сообщить, что в нашей библиотеке появился виртуальный ИИ-ассистент, готовый помочь вам с поиском книг, ответами на вопросы и навигацией по нашим услугам.',
+    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnQlMjBkaWdpdGFsfGVufDF8fHx8MTc3NTI2NDczMnww&ixlib=rb-4.1.0&q=80&w=1080',
+  },
+  {
     id: 1,
     title: 'Летний читальный зал открыт!',
     date: '15 июня 2024',

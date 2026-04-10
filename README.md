@@ -47,6 +47,7 @@
 - [Часто задаваемые вопросы](docs/faq.md)
 - [Руководство по Headless WordPress](docs/headless-wordpress-guide.md)
 - [Руководство по миграции на Next.js 15](docs/nextjs-migration-guide.md)
+- [Руководство по интеграции Next.js и Python](docs/nextjs-python-integration.md)
 - [Руководство по Payload CMS](docs/payload-cms-guide.md)
 - [Структура проекта](docs/project-structure.md)
 - [Сравнение технологических стеков](docs/tech-stack-comparison.md)
@@ -55,8 +56,8 @@
 
 1.  **Клонируйте репозиторий:**
     ```bash
-    git clone https://github.com/elips0675-web/nlb-studio6.git
-    cd nlb-studio6
+    git clone https://github.com/elips0675-web/nlb-studio7.git
+    cd nlb-studio7
     ```
 2.  **Установите зависимости:**
     ```bash
@@ -92,7 +93,7 @@
 
 2.  **Разверните на Firebase:**
 
-    *Убедитесь, что у вас установлен Firebase CLI и вы вошли в свою учетную запись.*
+    *Убедитесь, что у вас установлен Firebase CLI и вы вошли в свою учетную запись.*\
     ```bash
     firebase deploy --only hosting
     ```
