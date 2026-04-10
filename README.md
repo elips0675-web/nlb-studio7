@@ -38,6 +38,7 @@
 
 ## 📚 Документация
 
+- [Руководство по интеграции Next.js и Python](docs/nextjs-python-integration.md)
 - [Современный стек для разработки с ИИ-агентами](docs/ai-development-stack.md)
 - [Хостинг для ИИ-агентов в России и Беларуси](docs/ai-hosting-ru-by.md)
 - [Руководство по компонентам Bitrix](docs/bitrix-components-guide.md)
