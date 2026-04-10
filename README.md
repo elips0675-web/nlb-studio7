@@ -38,6 +38,7 @@
 
 - [Руководство по установке темы WordPress](docs/wordpress-theme-guide.md)
 - [Рекомендуемые плагины для WordPress](docs/wordpress-recommended-plugins.md)
+- [Руководство: Полиграфические услуги и калькулятор](docs/wordpress-printing-calculator-guide.md)
 - [Руководство по интеграции Next.js и Python](docs/nextjs-python-integration.md)
 - [Современный стек для разработки с ИИ-агентами](docs/ai-development-stack.md)
 - [Хостинг для ИИ-агентов в России и Беларуси](docs/ai-hosting-ru-by.md)
