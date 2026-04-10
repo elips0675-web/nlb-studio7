@@ -36,6 +36,7 @@
 
 ## 📚 Документация
 
+- [Рекомендация по архитектуре проекта](docs/project-architecture-recommendation.md)
 - [Полное руководство по WordPress: от установки до запуска](docs/wordpress-complete-guide.md)
 - [Современный стек для разработки с ИИ-агентами](docs/ai-development-stack.md)
 - [Хостинг для ИИ-агентов в России и Беларуси](docs/ai-hosting-ru-by.md)
