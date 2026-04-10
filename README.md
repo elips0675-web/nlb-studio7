@@ -37,6 +37,8 @@
 ## 📚 Документация
 
 - [Руководство по установке темы WordPress](docs/wordpress-theme-guide.md)
+- [Руководство по интеграции темы с плагинами](docs/wordpress-theme-plugin-integration.md)
+- [Продвинутая настройка и запуск WordPress](docs/wordpress-advanced-setup-guide.md)
 - [Рекомендуемые плагины для WordPress](docs/wordpress-recommended-plugins.md)
 - [Руководство: Полиграфические услуги и калькулятор](docs/wordpress-printing-calculator-guide.md)
 - [Современный стек для разработки с ИИ-агентами](docs/ai-development-stack.md)
