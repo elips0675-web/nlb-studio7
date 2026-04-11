@@ -36,6 +36,7 @@
 
 ## 📚 Документация
 
+- [PWA: Установка, Офлайн-режим и Push-уведомления](docs/pwa-guide.md)
 - [Next.js 15, TypeScript, Tailwind CSS, ShadCN UI, Framer Motion](docs/nextjs-15-guide.md)
 - [Рекомендация по архитектуре проекта](docs/project-architecture-recommendation.md)
 - [Полное руководство по WordPress: от установки до запуска](docs/wordpress-complete-guide.md)
