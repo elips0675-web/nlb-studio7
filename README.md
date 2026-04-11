@@ -36,6 +36,7 @@
 
 ## 📚 Документация
 
+- [План миграции на Next.js 15](docs/migration-prompt.md)
 - [PWA: Установка, Офлайн-режим и Push-уведомления](docs/pwa-guide.md)
 - [Next.js 15, TypeScript, Tailwind CSS, ShadCN UI, Framer Motion](docs/nextjs-15-guide.md)
 - [Рекомендация по архитектуре проекта](docs/project-architecture-recommendation.md)
@@ -48,7 +49,6 @@
 - [Руководство по развертыванию](docs/deployment-guide.md)
 - [Часто задаваемые вопросы](docs/faq.md)
 - [Руководство по Headless WordPress](docs/headless-wordpress-guide.md)
-- [Руководство по миграции на Next.js 15](docs/nextjs-migration-guide.md)
 - [Руководство по интеграции Next.js и Python](docs/nextjs-python-integration.md)
 - [Руководство по Payload CMS](docs/payload-cms-guide.md)
 - [Структура проекта](docs/project-structure.md)

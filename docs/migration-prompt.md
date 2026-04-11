@@ -1,49 +1,55 @@
-You are an expert in modern web development with deep knowledge of Next.js, React, TypeScript, and Tailwind CSS. Your task is to replicate an existing web application in a new project, performing a complete migration to a modern, robust, and high-performance technology stack.
+## Migration Prompt: Vite/React to Next.js 15
 
-**Project to be Migrated:**
+**Контекст:**
 
-*   **Framework:** The original project is a complex web application with a rich user interface and a large number of pages and components.
-*   **Key Features:** The application includes a variety of features such as a catalog of books and services, news and events sections, an interactive map, user profiles, and more.
+*   **Исходный проект (Source):** Это мой старый проект на React/Vite. Его код находится по пути: /path/to/your/OLD/project (<-- ЗАМЕНИТЕ ЭТУ СТРОКУ!)
+*   **Целевой проект (Target):** Это текущий проект. **Внимание:** Сейчас он настроен как Vite-проект. Первым шагом будет его преобразование в полноценный Next.js 15 проект.
 
-**Target Technology Stack:**
+**Главная задача:** Выполнить полную миграцию, включая преобразование структуры проекта, перенос и адаптацию всего кода (страниц, компонентов, стилей) из исходного проекта в целевой, используя современный стек: Next.js 15 (App Router), TypeScript, Tailwind CSS, ShadCN UI и Framer Motion.
 
-*   **Framework:** Next.js 15 with App Router
-*   **Language:** TypeScript
-*   **Styling:** Tailwind CSS
-*   **UI Components:** ShadCN UI
-*   **Animations:** Framer Motion
+**План действий (выполняй пошагово):**
 
-**Migration Requirements:**
+### Фаза 0: Преобразование проекта из Vite в Next.js
 
-1.  **Preserve All Page Templates:**
-    *   Recreate all existing pages from the `src/app/page-templates` and `src/app/template` directories.
-    *   Ensure that the routing structure is correctly implemented using the Next.js App Router.
-    *   Maintain the exact layout and design of each page.
+Это самый первый и важный шаг. Текущий проект нужно переделать под Next.js.
 
-2.  **Preserve All Components:**
-    *   Migrate all React components from the `src/app/components` directory.
-    *   Replace any legacy UI components with their equivalents from the ShadCN UI library, while preserving the original styles and functionality.
-    *   Ensure that all components are fully functional and correctly integrated into the new pages.
+1.  **Установка зависимостей:** Установи `next` как основную зависимость проекта.
+2.  **Обновление скриптов:** Открой файл `package.json` и измени секцию `scripts` следующим образом:
+    *   `"dev": "vite"` замени на `"dev": "next dev"`.
+    *   `"build": "vite build"` замени на `"build": "next build"`.
+    *   Добавь новый скрипт: `"start": "next start"`.
+3.  **Создание конфигурации Next.js:** Создай в корне проекта файл `next.config.mjs` (если его нет) с базовой конфигурацией.
+4.  **Проверка:** После этих изменений запусти `npm run dev`, чтобы убедиться, что сервер разработки Next.js запускается без ошибок.
 
-3.  **Preserve All Styles and Assets:**
-    *   Migrate all global styles, Tailwind CSS configurations, and other styling files from the `src/styles` directory.
-    *   Copy all public assets, such as images and icons, from the `public` directory.
+### Фаза 1: Анализ и подготовка
 
-4.  **Preserve All Data and Logic:**
-    *   Migrate all data sources and static data from the `src/app/data` directory.
-    *   Preserve all business logic, helper functions, and other code.
+1.  **Проверь доступ:** Используя указанный путь к исходному проекту, составь и покажи мне древовидную структуру его папки `src`. Я хочу убедиться, что ты видишь все папки: `app/template`, `widgets`, `features`, `shared`, `styles` и другие.
+2.  **Глобальные стили:**
+    *   Прочитай файлы `tailwind.config.ts` (или .js), `src/styles/index.css` и `src/styles/tailwind.css` из **исходного** проекта.
+    *   Адаптируй `tailwind.config.ts` в **этом** проекте, объединив старые настройки с конфигурацией по умолчанию для ShadCN UI в Next.js.
+    *   Создай файл `app/globals.css` и перенеси в него содержимое `src/styles/index.css` и других корневых файлов стилей.
 
-5.  **Ensure Successful Migration:**
-    *   The final result should be a fully functional and visually identical replica of the original project.
-    *   The new project should be well-structured, maintainable, and optimized for performance.
-    *   The code should be clean, well-documented, and follow the best practices of the target technology stack.
+### Фаза 2: Миграция Layout и главной страницы
 
-**Instructions:**
+1.  **Прочитай исходники:**
+    *   `src/app/template/home-template.tsx` (или аналогичный файл для главной).
+    *   `src/widgets/header/header.tsx`.
+    *   `src/widgets/footer/footer.tsx`.
+2.  **Создай базу в новом проекте:**
+    *   Создай `app/layout.tsx`. Помести в него Header и Footer. Весь контент страниц должен рендериться между ними.
+    *   Создай `app/page.tsx` (главная страница). Перенеси в него JSX-разметку из `home-template.tsx`.
+    *   **Важно:** Сразу адаптируй код. Замени простые теги (`<button>`, `<a>`) на компоненты ShadCN (`<Button>`, `<Link>`). Для сложных виджетов (`<HeroSection />`) пока создай пустые компоненты-заглушки.
 
-1.  Analyze the structure and code of the original project.
-2.  Create a new Next.js 15 project with the specified technology stack.
-3.  Systematically migrate each part of the project, following the requirements above.
-4.  Pay close attention to detail to ensure a perfect replication.
-5.  Provide the complete code for the new project.
+### Фаза 3: Миграция шаблонов страниц
 
-This is a complex task that requires a high level of expertise. Your ability to successfully complete this migration will demonstrate your skills as a top-tier web developer.
+Это ключевой этап. Для каждого файла из папки `src/app/template/` старого проекта:
+
+1.  **Определи роут:** `all-news-page-template.tsx` должен стать страницей `app/news/page.tsx`. `service-detail-template.tsx` должен стать динамической страницей `app/service/[slug]/page.tsx`.
+2.  **Прочитай старый шаблон:** Полностью прочитай `.tsx` файл шаблона.
+3.  **Создай новую страницу:** Создай соответствующую папку и файл `page.tsx` в этом проекте.
+4.  **Перенеси код:** Скопируй JSX-разметку и логику. Добавь `"use client"` в начало файла, если в нем используются хуки React (`useState`, `useEffect`) или обработчики событий.
+5.  **Адаптируй:** Обнови пути импортов. Замени UI-элементы на компоненты ShadCN.
+
+--- 
+
+**Начинай работу с Фазы 0, Шага 1. Жду выполнения.**
