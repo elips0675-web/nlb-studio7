@@ -28,6 +28,7 @@
 ```text
 /
 |-- /src              # Исходный код React-приложения (статическая версия)
+|-- /bootstrap-site   # Исходный код статического сайта на Bootstrap
 |-- /nlb-wp-theme   # Готовая тема для WordPress
 |-- /docs             # Дополнительная документация
 |-- README.md         # Этот файл
@@ -36,7 +37,10 @@
 
 ## 📚 Документация
 
-#### Основная документация
+#### Документация по Bootstrap-сайту
+- [Документация для bootstrap-site](docs/README.md)
+
+#### Основная документация (React)
 - [Структура проекта](docs/project-structure.md)
 - [Рекомендация по архитектуре проекта](docs/project-architecture-recommendation.md)
 - [Руководство по кастомизации](docs/customization-guide.md)
