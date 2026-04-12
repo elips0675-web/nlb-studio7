@@ -59,7 +59,7 @@
   - [Полное руководство по WordPress: от установки до запуска](docs/wordpress-complete-guide.md)
   - [Руководство по Headless WordPress](docs/headless-wordpress-guide.md)
 - **Bitrix:**
-  - [Руководство по интеграции с Bitrix](docs/bitrix-integration-guide.md)
+  - [Руководство: Интеграция Bootstrap и React в 1С-Битрикс](docs/bitrix-react-bootstrap-integration.md)
   - [Руководство по компонентам Bitrix](docs/bitrix-components-guide.md)
 - **Другие решения:**
   - [Руководство по Payload CMS](docs/payload-cms-guide.md)
