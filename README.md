@@ -36,23 +36,34 @@
 
 ## 📚 Документация
 
-- [План миграции на Next.js 15](docs/migration-prompt.md)
-- [PWA: Установка, Офлайн-режим и Push-уведомления](docs/pwa-guide.md)
-- [Next.js 15, TypeScript, Tailwind CSS, ShadCN UI, Framer Motion](docs/nextjs-15-guide.md)
+#### Основная документация
+- [Структура проекта](docs/project-structure.md)
 - [Рекомендация по архитектуре проекта](docs/project-architecture-recommendation.md)
-- [Полное руководство по WordPress: от установки до запуска](docs/wordpress-complete-guide.md)
-- [Современный стек для разработки с ИИ-агентами](docs/ai-development-stack.md)
-- [Хостинг для ИИ-агентов в России и Беларуси](docs/ai-hosting-ru-by.md)
-- [Руководство по компонентам Bitrix](docs/bitrix-components-guide.md)
-- [Руководство по интеграции с Bitrix](docs/bitrix-integration-guide.md)
 - [Руководство по кастомизации](docs/customization-guide.md)
 - [Руководство по развертыванию](docs/deployment-guide.md)
-- [Часто задаваемые вопросы](docs/faq.md)
-- [Руководство по Headless WordPress](docs/headless-wordpress-guide.md)
-- [Руководство по интеграции Next.js и Python](docs/nextjs-python-integration.md)
-- [Руководство по Payload CMS](docs/payload-cms-guide.md)
-- [Структура проекта](docs/project-structure.md)
+- [Часто задаваемые вопросы (FAQ)](docs/faq.md)
+
+#### Технологии и Гайды
+- [Гайд по стеку: Next.js, TypeScript, Tailwind и др.](docs/nextjs-15-guide.md)
+- [Альтернативные технологические стеки для Frontend-разработки](docs/alternative-stacks.md)
 - [Сравнение технологических стеков](docs/tech-stack-comparison.md)
+- [План миграции на Next.js 15](docs/migration-prompt.md)
+- [PWA: Установка, Офлайн-режим и Push-уведомления](docs/pwa-guide.md)
+
+#### Интеграции с CMS и Backend
+- **WordPress:**
+  - [Полное руководство по WordPress: от установки до запуска](docs/wordpress-complete-guide.md)
+  - [Руководство по Headless WordPress](docs/headless-wordpress-guide.md)
+- **Bitrix:**
+  - [Руководство по интеграции с Bitrix](docs/bitrix-integration-guide.md)
+  - [Руководство по компонентам Bitrix](docs/bitrix-components-guide.md)
+- **Другие решения:**
+  - [Руководство по Payload CMS](docs/payload-cms-guide.md)
+  - [Руководство по интеграции Next.js и Python](docs/nextjs-python-integration.md)
+
+#### Разработка с использованием ИИ
+- [Современный стек для разработки с ИИ-агентами](docs/ai-development-stack.md)
+- [Хостинг для ИИ-агентов в России и Беларуси](docs/ai-hosting-ru-by.md)
 
 ## ⚙️ Запуск статической React-версии
 
